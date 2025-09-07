@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carrusel Sin Bootstrap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mi-carrusel">
+        <div class="carrusel-indicadores">
+            <button class="indicador activo" data-slide-to="0" aria-label="Diapositiva 1"></button>
+            <button class="indicador" data-slide-to="1" aria-label="Diapositiva 2"></button>
+            <button class="indicador" data-slide-to="2" aria-label="Diapositiva 3"></button>
+        </div>
+        <div class="carrusel-interior">
+            <div class="carrusel-item activo">
+                <img src="https://via.placeholder.com/800x400/FF5733/FFFFFF" alt="Imagen de la primera diapositiva">
+                <div class="carrusel-caption">
+                    <h5>Etiqueta de la primera diapositiva</h5>
+                    <p>Contenido representativo para la primera diapositiva.</p>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img src="https://via.placeholder.com/800x400/33C1FF/FFFFFF" alt="Imagen de la segunda diapositiva">
+                <div class="carrusel-caption">
+                    <h5>Etiqueta de la segunda diapositiva</h5>
+                    <p>Contenido representativo para la segunda diapositiva.</p>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <img src="https://via.placeholder.com/800x400/99FF33/FFFFFF" alt="Imagen de la tercera diapositiva">
+                <div class="carrusel-caption">
+                    <h5>Etiqueta de la tercera diapositiva</h5>
+                    <p>Contenido representativo para la tercera diapositiva.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carrusel-control-anterior" aria-label="Anterior">
+            <span>&#10094;</span>
+        </button>
+        <button class="carrusel-control-siguiente" aria-label="Siguiente">
+            <span>&#10095;</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
