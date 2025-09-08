@@ -25,8 +25,8 @@ body::before {
 }
 
 .container {
-    width: 90%;
-    max-width: 2000px;
+    width: 100%;
+    max-width: 2500px;
     margin: auto;
     padding: 5px;
     position: relative;
@@ -37,7 +37,7 @@ body::before {
 header {
     position: relative;
     color: #fff;
-    padding: 40px 0 20px 0;
+    padding: 20px 0 10px 0;
     text-align: center;
     border-bottom: 4px solid #1c492e;
     
@@ -59,12 +59,19 @@ header::before {
     z-index: -1;
 }
 
+.logo{
+    width: 350px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0px;
+}
 .header-content {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     flex-wrap: wrap; 
-    padding: 0 20px; 
+    padding: 0 10px; 
 }
 
 .header-titles {
@@ -88,9 +95,10 @@ header h1 {
     letter-spacing: 1px;
     width: auto;
     text-align: left;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700; 
-    font-style: italic; 
+    font-style: bold; 
+    color: #88f74d;
 }
 
 header h1, .slogan {
