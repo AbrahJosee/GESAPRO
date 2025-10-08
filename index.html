@@ -15,10 +15,18 @@
     <div class="container">
         <div class="header-content">
             <div class="header-titles">
-                <img src="assets/Imagenes/Fondo oscuro.png" alt="Logo GesaPro" class="logo">
+                <a href="#home">
+                    <img src="assets/Imagenes/Fondo oscuro.png" alt="Logo GesaPro" class="logo">
+                </a>
+                <h1 style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+                    Gestión Ambiental Profesional SpA
+                </h1>
                 <p class="slogan">Aliados en tu cumplimiento ambiental</p>
             </div>
-            <nav class="main-nav">
+            
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+            
+            <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -35,7 +43,7 @@
 <div class="container">
     <div class="mi-carrusel">
         <div class="carrusel-interior">
-            <div class="carrusel-item activo">
+            <div class="carrusel-item activo" id="home">
                 <img src="assets/Imagenes/fondo.jpg" alt="Imagen de la primera diapositiva">
                 <div class="carrusel-caption">
                     <h5>Quienes somos</h5>
@@ -233,8 +241,8 @@
 
     <section class="contact-info" id="contacto">
         <h2>Información de contacto</h2>
-        <p><strong>Correo:</strong> contacto@gesapro.cl</p>
-        <p><strong>Teléfono:</strong> +56 9 3773 8851</p>
+        <p><strong>Correo:</strong> <a href="mailto:contacto@gesapro.cl">contacto@gesapro.cl</a></p>
+        <p><strong>Teléfono:</strong> <a href="tel:+56937738851">+56 9 3773 8851</a></p>
     </section>
 </div>
 
@@ -243,6 +251,20 @@
         <p>&copy; 2025 Gestión Ambiental Profesional SpA. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+
+    toggle.addEventListener('click', () => {
+        // Alterna la clase 'active' para mostrar/ocultar el menú (manejo en CSS)
+        nav.classList.toggle('active');
+
+        // Actualiza el estado de accesibilidad (aria-expanded)
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !isExpanded);
+    });
+</script>
 
 <script src="scripts.js"></script>
 </body>

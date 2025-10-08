@@ -60,11 +60,15 @@ header::before {
 }
 
 .logo{
+    /* Ajustes para un mejor control del logo */
     width: 400px;
+    max-width: 80%; /* Asegura que sea responsivo */
     height: 90px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 0px;
+    margin-right: 0; 
+    margin-left: 0; 
+    height: auto;
 }
 .header-content {
     display: flex; 
@@ -141,6 +145,8 @@ header h1, .slogan {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 3;
+    /* Asegurar que el texto dentro de la sección blanca sea oscuro */
+    color: #333; 
 }
 
 .section h2 {
@@ -239,6 +245,18 @@ ul li:last-child {
 
 .contact-info strong {
     font-weight: 600;
+}
+
+/* ARREGLO CLAVE: Estilo para los enlaces de contacto (email y teléfono) */
+.contact-info a {
+    color: #a8ff78; /* Verde claro para buen contraste sobre el fondo oscuro */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 /* ---- Footer ---- */
@@ -440,11 +458,7 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    header h1 {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 10px;
-    }
+
     header p {
         font-size: 1rem;
     }
@@ -455,5 +469,55 @@ footer {
         flex-direction: column;
         gap: 10px;
         margin-top: 20px;
+    }
+}
+
+/* ====== Menú responsive tipo hamburguesa ====== */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 20;
+    
+    /* ARREGLO CLAVE: Reset para que el <button> se vea como un ícono */
+    background: none; 
+    border: none;    
+    padding: 0;      
+    line-height: 1;  
+}
+
+/* --- En pantallas pequeñas --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-top: 10px; 
+    }
+
+    .main-nav {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        z-index: 15;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .main-nav.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
